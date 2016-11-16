@@ -20,16 +20,16 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String addNewPost(@Valid Post post, BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors()) {
-            return "index";
-        }
-        // model.addAttribute("post", new Post());
-        model.addAttribute("title", post.getTitle());
-        model.addAttribute("content", post.getContent());
-        return "result";
-    }
+//    @RequestMapping(value = "/", method = RequestMethod.POST)
+//    public String addNewPost(@Valid Post post, BindingResult bindingResult, Model model) {
+//        if (bindingResult.hasErrors()) {
+//            return "index";
+//        }
+//        // model.addAttribute("post", new Post());
+//        model.addAttribute("title", post.getTitle());
+//        model.addAttribute("content", post.getContent());
+//        return "result";
+//    }
 
     @RequestMapping("/bootstrap")
     public String bootstrapExample(){
