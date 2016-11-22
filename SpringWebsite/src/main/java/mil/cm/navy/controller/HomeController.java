@@ -15,7 +15,7 @@ import javax.validation.Valid;
 @Controller
 public class HomeController {
 
-    @RequestMapping("/")
+    @RequestMapping(value = {"/", "/home"})
     public String index(){
         return "index";
     }
