@@ -1,33 +1,55 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:c="http://www.w3.org/1999/XSL/Transform">
-<head>
-    <title>Login page</title>
-</head>
-<body>
-<!--<h1>Login page</h1>-->
-<!--<p th:if="${loginError}" class="error">Wrong user or password</p>-->
-<!--<form th:action="@{/login.html}" method="post">-->
 
-    <!--<label for="username">Username</label>:-->
-    <!--<input type="text" id="username" name="username" autofocus="autofocus" /> <br />-->
-    <!--<label for="password">Password</label>:-->
-    <!--<input type="password" id="password" name="password" /> <br />-->
-    <!--<input type="submit" value="Log in" />-->
-<!--</form>-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorator="layout">
+<!--no html extension when specifying the layout source-->
+<!--otherwise
+thymeleaf-error-resolving-template
+http://stackoverflow.com/questions/29318811/thymeleaf-error-resolving-template
+-->
+<body layout:fragment="body">
+<div class="container">
+    <div class="jumbotron">
 
-    <div th:if="${param.error}">
-        Invalid username and password.
+        <h3>Login</h3>
+        <p>Hello marin!</p>
+        /greeting, /login, /bootstrap
+
+        <div th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        <form class="form-signin" th:action="@{/login}" method="post">
+            <div><label> User Name : <input class="input-block-level" type="text" name="username"/> </label></div>
+            <div><label> Password: <input class="input-block-level" type="password" name="password"/> </label></div>
+            <div><input class="btn btn-large btn-primary" type="submit" value="Sign In"/></div>
+        </form>
+
+
+        <p>
+            <a href="/greeting">Greetings</a>
+        </p>
+        <p>
+            <a href="/bootstrap">Bootstrap</a>
+        </p>
+
+
+        <!--<form class="form-signin">-->
+            <!--<h2 class="form-signin-heading">Please sign in</h2>-->
+            <!--<input type="text" class="input-block-level" placeholder="Email address">-->
+            <!--<input type="password" class="input-block-level" placeholder="Password">-->
+            <!--<input class="checkbox">-->
+                <!--<input type="checkbox" value="remember-me"> Remember me</input>-->
+            <!--</label>-->
+            <!--<button class="btn btn-large btn-primary" type="submit">Sign in</button>-->
+        <!--</form>-->
+
     </div>
-    <div th:if="${param.logout}">
-        You have been logged out.
-    </div>
-    <form th:action="@{/login}" method="post">
-        <div><label> User Name : <input type="text" name="username"/> </label></div>
-        <div><label> Password: <input type="password" name="password"/> </label></div>
-        <div><input type="submit" value="Sign In"/></div>
-    </form>
 
 
+</div>
 
 </body>
 </html>

@@ -1,20 +1,23 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Getting Started: Handling Form Submission</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorator="layout">
+<!--no html extension when specifying the layout source-->
+<!--otherwise
+thymeleaf-error-resolving-template
+http://stackoverflow.com/questions/29318811/thymeleaf-error-resolving-template
+-->
+<body layout:fragment="body">
+<div class="container">
+    <div class="jumbotron">
 
-    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
-          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
-          rel="stylesheet" media="screen" />
+        <h3>Greeting</h3>
 
-    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
-            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+    </div>
 
-
-</head>
-<body>
-    Greeting
+    <p>
+        <a href="/greeting">Greetings</a>
+    </p>
+</div>
 
 </body>
 </html>
