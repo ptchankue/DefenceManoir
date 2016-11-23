@@ -27,3 +27,11 @@ http://www.eucom.mil/
 ---
 http://www.c6f.navy.mil/
 
+
+It is important to add webjars/** as part of the resources to be access without been authenticated
+
+
+http://themes.getbootstrap.com/products/application
+
+Nice free templates:
+https://templateflip.com/bootstrap-templates-2015/
