@@ -23,7 +23,7 @@ public class BootstrapTemplatesController {
     @RequestMapping(value = "/moderna", method = RequestMethod.GET)
     public String greetingSubmit(@ModelAttribute Greeting greeting) {
 
-        myLogger = Logger.getLogger(LoginController.class.getName());
+        myLogger = Logger.getLogger(BootstrapTemplatesController.class.getName());
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (!(authentication instanceof AnonymousAuthenticationToken)) {

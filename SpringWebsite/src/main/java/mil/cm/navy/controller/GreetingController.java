@@ -21,4 +21,10 @@ public class GreetingController {
         return "other/result";
     }
 
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String testController(Model model) {
+        return "other/test";
+    }
+
+
 }
