@@ -9,8 +9,8 @@
 /* === fontawesome === */
 @import url('font-awesome.css');
 /* ==== overwrite bootstrap standard ==== */
-@import url('overwrite.css');
-@import url('animate.css');
+@import url('@{overwrite.css}');
+@import url('@{animate.css}');
 
 
 
