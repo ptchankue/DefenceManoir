@@ -7,51 +7,97 @@
 thymeleaf-error-resolving-template
 http://stackoverflow.com/questions/29318811/thymeleaf-error-resolving-template
 -->
+<head>
+    <style>
+        form {
+            border: 3px solid #f1f1f1;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        img.avatar {
+            width: 20%;
+            border-radius: 50%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+               display: block;
+               float: none;
+            }
+            .cancelbtn {
+               width: 100%;
+            }
+        }
+    </style>
+</head>
 <body layout:fragment="body">
-<div class="container">
-    <div class="jumbotron">
-
-        <h3>Login</h3>
-        <p>Hello marin!</p>
-        /greeting, /login, /bootstrap
-
-        <div th:if="${param.error}">
-            Invalid username and password.
-        </div>
-        <div th:if="${param.logout}">
-            You have been logged out.
-        </div>
-        <form class="form-signin" th:action="@{/login}" method="post">
-            <div><label> User Name : <input class="input-block-level" type="text" name="username"/> </label></div>
-            <div><label> Password: <input class="input-block-level" type="password" name="password"/> </label></div>
-            <div><input class="btn btn-large btn-primary" type="submit" value="Sign In"/></div>
-        </form>
 
 
-        <p>
-            <a href="/greeting">Greetings</a>
-        </p>
-        <p>
-            <a href="/bootstrap">Bootstrap</a>
-        </p>
 
-        <!--<img width="100%"-->
-             <!--th:src="@{images/limbe.jpeg}"/>-->
+<h2>Login Form</h2>
 
-        <!--<form class="form-signin">-->
-            <!--<h2 class="form-signin-heading">Please sign in</h2>-->
-            <!--<input type="text" class="input-block-level" placeholder="Email address">-->
-            <!--<input type="password" class="input-block-level" placeholder="Password">-->
-            <!--<input class="checkbox">-->
-                <!--<input type="checkbox" value="remember-me"> Remember me</input>-->
-            <!--</label>-->
-            <!--<button class="btn btn-large btn-primary" type="submit">Sign in</button>-->
-        <!--</form>-->
-
+<form th:action="@{/login}" method="post">
+    <div class="imgcontainer">
+        <img th:src="@{images/img_avatar2.png}" alt="Avatar" class="avatar"/>
     </div>
 
+    <div class="container">
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required="true"/>
 
-</div>
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required="true"/>
+
+        <button type="submit">Login</button>
+        <!--<input type="submit" value="Sign In"/>-->
+        <input type="checkbox" checked="checked"/> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+</form>
+
 
 </body>
 </html>
