@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Font Awesome Icons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/4.6.3/css/font-awesome.min.css}"/>
+    <link th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+</head>
+<style>
+    .chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+}
+
+.chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+</style>
+<body class="container">
+
+<h1>fa fa-heart</h1>
+
+    <i class="fa fa-heart"></i>
+    <i class="fa fa-heart" style="font-size:24px"></i>
+    <i class="fa fa-heart" style="font-size:36px;"></i>
+    <i class="fa fa-heart" style="font-size:48px;color:red"></i>
+<br/>
+
+<p>Used on a button:</p>
+<button style="font-size:24px" class="btn btn-default">Button <i class="fa fa-heart"></i></button>
+
+<p>Unicode:</p>
+<i style="font-size:24px" class="fa">&#xf004;</i>
+<hr/>
+<h3>Contact Chip</h3>
+<div class="chip">
+    <img th:src="@{images/img_avatar.png}" alt="Person" width="96" height="96"/>
+    John Doe
+</div>
+<div class="chip">
+    <img th:src="@{images/img_avatar2.png}" alt="Person" width="96" height="96"/>
+    John Doe
+    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+</div>
+
+<style>
+    .card {
+        /* Add shadows to create the "card" effect */
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+    /* On mouse-over, add a deeper shadow */
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    /* Add some padding inside the card container */
+    .container {
+        padding: 2px 16px;
+    }
+    .columns {
+        float: left;
+        width: 33.3%;
+        padding: 8px;
+    }
+
+</style>
+<hr/>
+<h3>Card</h3>
+<div class="card columns">
+    <img th:src="@{images/img_avatar.png}" alt="Avatar" style="width:100%"/>
+    <div class="container">
+        <h4><b>John Doe</b></h4>
+        <p>Architect &amp; Engineer</p>
+    </div>
+</div>
+<div class="card columns">
+    <img th:src="@{images/img_avatar2.png}" alt="Avatar" style="width:100%"/>
+    <div class="container">
+        <h4><b>Jane Doe</b></h4>
+        <p>Software &amp; Engineer</p>
+    </div>
+</div>
+<script th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/3.3.4/js/bootstrap.min.js}" />
+
+</body>
+</html>
