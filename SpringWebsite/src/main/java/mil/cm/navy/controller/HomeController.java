@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 
 /**
  * Created by patricktchankue on 11/15/16.
@@ -16,20 +17,17 @@ import javax.validation.Valid;
 public class HomeController {
 
     @RequestMapping(value = {"/", "/home"})
-    public String index(){
+    public String index(Model model){
+
+        model.addAttribute("message", "My message passed from the controller");
+
+        ArrayList<String> articles = new ArrayList<String>();
+        articles.add("Article 1"); articles.add("Article 2"); articles.add("Article 3"); articles.add("Article 4");
+        model.addAttribute("articles", articles);
+
         return "index";
     }
 
-//    @RequestMapping(value = "/", method = RequestMethod.POST)
-//    public String addNewPost(@Valid Post post, BindingResult bindingResult, Model model) {
-//        if (bindingResult.hasErrors()) {
-//            return "index";
-//        }
-//        // model.addAttribute("post", new Post());
-//        model.addAttribute("title", post.getTitle());
-//        model.addAttribute("content", post.getContent());
-//        return "result";
-//    }
 
     @RequestMapping("/bootstrap")
     public String bootstrapExample(){
