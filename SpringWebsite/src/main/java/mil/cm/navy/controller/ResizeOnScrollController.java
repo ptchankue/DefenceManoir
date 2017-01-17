@@ -8,22 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class GreetingController {
+public class ResizeOnScrollController {
 
-    @RequestMapping(value = "/greeting", method = RequestMethod.GET)
+    @RequestMapping(value = "/resize", method = RequestMethod.GET)
     public String greetingForm(Model model) {
         model.addAttribute("greeting", new Greeting());
-        return "greeting";
-    }
-
-    @RequestMapping(value = "/greeting", method = RequestMethod.POST)
-    public String greetingSubmit(@ModelAttribute Greeting greeting) {
-        return "other/result";
-    }
-
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public String testController(Model model) {
-        return "other/test";
+        return "other/resize";
     }
 
 

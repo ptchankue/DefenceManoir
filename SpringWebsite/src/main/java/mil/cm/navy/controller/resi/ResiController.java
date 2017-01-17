@@ -1,4 +1,4 @@
-package mil.cm.navy.controller;
+package mil.cm.navy.controller.resi;
 
 import mil.cm.navy.form.Greeting;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;

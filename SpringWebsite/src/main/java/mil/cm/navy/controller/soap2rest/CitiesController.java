@@ -31,7 +31,6 @@ public class CitiesController {
                 "      <web:GetCitiesByCountry>\n" +
                 "         <!--Optional:-->\n" +
                 "         <web:CountryName>"+ country +
-
                 "</web:CountryName>\n" +
                 "      </web:GetCitiesByCountry>\n" +
                 "   </soap:Body>\n" +
