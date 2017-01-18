@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<script src="webjars/sockjs-client/1.0.2/sockjs.js"></script>-->
+    <!--<script src="webjars/stomp-websocket/2.3.3/stomp.js"></script>-->
+    <script th:src="@{webjars/jquery/2.1.4/jquery.js}"></script>
+    <script th:src="@{/webjars/sockjs-client/1.0.2/sockjs.min.js}"></script>
+    <script th:src="@{/webjars/stomp-websocket/2.3.3/stomp.min.js}"></script>
+
+</head>
+
+<body>
+
+    <button id="connect">Connect</button>
+    <br/>
+    <button id="ping">Send Ping</button>
+    <br/>
+    <button id="disconnect">Disconnect</button>
+
+
+
+    <script th:src="@{js/socket/ping.js}"></script>
+</body>
+</html>
