@@ -13,10 +13,12 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
 
 
-import java.awt.*;
 import java.nio.charset.Charset;
 
+import static org.junit.Assert.assertEquals;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
+
 
 /**
  * Created by patricktchankue on 12/12/16.
@@ -45,7 +47,13 @@ public class MyTest {
 
     @Test
     public void testMe(){
-        //assert(1, 1);
+        assertEquals(1, 1);
 
+    }
+    @Test
+    public void testEndpoint() throws Exception {
+ //       mockMvc.perform(get("/"))
+//        this.mockMvc.perform(get("/cities"))
+//                .andExpect(status().isOk());
     }
 }

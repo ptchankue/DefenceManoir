@@ -25,16 +25,18 @@ public class CitiesController {
     @RequestMapping(value = "/cities", produces = "application/json")
     public ResponseEntity getListCities(@RequestParam(value = "country", defaultValue = "South Africa") String country){
 
+        //CityController cityController;
+
         String req = "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:web=\"http://www.webserviceX.NET\">\n" +
-                "   <soap:Header/>\n" +
-                "   <soap:Body>\n" +
-                "      <web:GetCitiesByCountry>\n" +
-                "         <!--Optional:-->\n" +
-                "         <web:CountryName>"+ country +
-                "</web:CountryName>\n" +
-                "      </web:GetCitiesByCountry>\n" +
-                "   </soap:Body>\n" +
-                "  </soap:Envelope>";
+                    "   <soap:Header/>\n" +
+                    "   <soap:Body>\n" +
+                    "      <web:GetCitiesByCountry>\n" +
+                    "         <!--Optional:-->\n" +
+                    "         <web:CountryName>"+ country +
+                    "         </web:CountryName>\n" +
+                    "      </web:GetCitiesByCountry>\n" +
+                    "   </soap:Body>\n" +
+                    "  </soap:Envelope>";
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.TEXT_XML);
