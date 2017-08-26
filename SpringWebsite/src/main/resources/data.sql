@@ -7,4 +7,4 @@ INSERT INTO `country` (`name`) VALUES ('Ethiopia');
 INSERT INTO `country` (`name`) VALUES ('Gabon');
 INSERT INTO `country` (`name`) VALUES ('Zimbabwe');
 
-INSERT INTO `city` (`name`, `country_id`) VALUES ('Johannesburg', 0);
+-- INSERT INTO `city` (`name`, `country_id`) VALUES ('Johannesburg', 0);
